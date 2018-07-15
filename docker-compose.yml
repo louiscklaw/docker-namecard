@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  contacts_nodejs:
+    build: ./nodejs
+    container_name: contacts_nodejs
+
+    volumes:
+      - "./app:/src/app"
+      - /tmp:/tmp
+
+    ports:
+      - "8002:3000"
+
+    networks:
+        - web
+
+    labels:
+        - "traefik.enable=true"
+        - "traefik.docker.network=web"
+        - "traefik.basic.frontend.rule=Host:contacts.iamon99.com"
+        - "traefik.basic.port=3000"
+        - "traefik.basic.protocol=http"
+
+networks:
+    web:
+        external: true
