@@ -1,14 +1,19 @@
 {
-	"name": "Louis Law",
-	"email": "louiscklaw@gmail.com",
-	"www": "https://aboutme.iamon99.com",
-    "living place": "Hong Kong",
+    "name": "Louis Law",
+    "email": [
+        "louiscklaw@gmail.com",
+        "hi@louislabs.com"
+    ],
+    "keybase.io":"https://keybase.io/logickeee",
+    "www": "https://aboutme.louislabs.com",
+    "living place": "Hong Kong (GMT+8)",
+
     "github":"https://github.com/louiscklaw",
-    "stack": [
+    "docker":"https://hub.docker.com/r/logickee",
+    "area of interest / stack": [
         "perl",
-        "python",
-        "raspberry pi",
-        "cubie board",
-        "node mcu"
+        "python","fabric",
+        "nodejs","lua",
+        "raspberry pi","cubie board","node mcu"
     ]
 }

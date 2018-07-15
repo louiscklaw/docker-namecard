@@ -42,7 +42,8 @@ def docker_compose_down_and_up(target_container):
 
 @task
 @hosts(['logic@gcp.louislabs.com'])
-def rsync_to_gcp():
+def rebuild():
+    sudo('chown -R logic:logic {}'.format(PROJ_HOME[1]))
     local('rsync -azhW --delete {}/ logic@gcp.louislabs.com:{}'.format(
         PROJ_HOME[0], PROJ_HOME[1]
     ))
@@ -51,6 +52,7 @@ def rsync_to_gcp():
         run('docker network create web')
 
     with cd(PROJ_HOME[1]):
+        run('docker image prune --force --all')
         run('docker-compose build --no-cache contacts_nodejs')
         run('docker-compose up -d contacts_nodejs')
         run('docker image prune --force --all')
