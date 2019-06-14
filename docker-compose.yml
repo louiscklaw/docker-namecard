@@ -18,7 +18,7 @@ services:
     labels:
         - "traefik.enable=true"
         - "traefik.docker.network=web"
-        - "traefik.basic.frontend.rule=Host:contacts.iamon99.com"
+        - "traefik.basic.frontend.rule=Host:contacts.louislabs.com"
         - "traefik.basic.port=3000"
         - "traefik.basic.protocol=http"
 
