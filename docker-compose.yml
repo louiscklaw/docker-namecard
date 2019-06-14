@@ -10,7 +10,7 @@ services:
       - /tmp:/tmp
 
     ports:
-      - "8002:3000"
+      - "8004:3000"
 
     networks:
         - proxy
